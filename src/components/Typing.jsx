@@ -8,7 +8,7 @@ export default function Typing({ wordOne }) {
   const [blink, setBlink] = useState(true);
   const [reverse, setReverse] = useState(false);
 
-  const words = [wordOne];
+  const words = React.useMemo(() => [wordOne], [wordOne]);
 
   const Presentation = styled.h1`
     font-family: "Poppins", sans-serif;
@@ -29,7 +29,7 @@ export default function Typing({ wordOne }) {
     }, Math.max(reverse ? 75 : subIndex === words[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse]);
+  }, [subIndex, index, reverse, words]);
 
   useEffect(() => {
     const timeout2 = setTimeout(() => {

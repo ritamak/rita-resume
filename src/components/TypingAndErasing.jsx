@@ -8,7 +8,7 @@ export default function TypingAndErasing() {
   const [blink, setBlink] = useState(true);
   const [reverse, setReverse] = useState(false);
 
-  const words = ["Producer", "Developer."];
+  const words = React.useMemo(() => ["Producer", "Developer."], []);
 
   const Presentation = styled.h1`
     font-family: "Poppins", sans-serif;
@@ -39,7 +39,7 @@ export default function TypingAndErasing() {
     }, Math.max(reverse ? 75 : subIndex === words[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
 
     return () => clearTimeout(timeout);
-  }, [subIndex, index, reverse]);
+  }, [subIndex, index, reverse, words]);
 
   // blinker
   useEffect(() => {
