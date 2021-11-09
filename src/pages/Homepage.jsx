@@ -1,20 +1,11 @@
-import React, { useReducer, useState, useEffect, useContext } from "react";
-import { ThemeContext } from "../store/ThemeContext";
-
+import React, { useReducer, useState, useEffect } from "react";
+import ButtonColor from "../components/ButtonColor";
 import RitaTalking from "../components/RitaTalking";
 import Topics from "../components/Topics";
 import Layout from "../components/Layout";
 import TypingAndErasing from "../components/TypingAndErasing";
-import Pdf from "../Documents/ritacv.pdf";
-import styled from "styled-components";
 
 const initialMessageState = { message: "Hi! Ask me anything." };
-
-const StyledLink = styled.a`
-  color: ${(props) => (props.darkMode ? "white" : "black")};
-`;
-
-let pdfLink;
 
 const messageReducer = (state, action) => {
   switch (action.type) {
@@ -40,12 +31,7 @@ const messageReducer = (state, action) => {
       };
     case "five":
       return {
-        message:
-          "JavaScript, React, (a little) TypeScript and Next.js, Gatsby, Node.js, MongoDB. I'm a native portuguese speaker but I'm very confortable with English. Due to my background, I'm a very organized person and a team player. I'm used to work under pressure and stress, communicate with clients and have fun along the way! Always!",
-      };
-    case "six":
-      return {
-        message: pdfLink,
+        message: `JavaScript, React, (a little) TypeScript and Next.js, Gatsby, Node.js, MongoDB. I'm a native portuguese speaker but I'm very confortable with English. Due to my background, I'm a very organized person and a team player. I'm used to work under pressure and stress, communicate with clients and have fun along the way! Always! `,
       };
     case "seven":
       return {
@@ -83,19 +69,19 @@ const HomePage = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const theme = useContext(ThemeContext);
-  const darkMode = theme.state.darkMode;
-
-  pdfLink = (
-    <StyledLink darkMode={darkMode} href={Pdf} target="_blank" rel="noreferrer">
-      Here you go!
-    </StyledLink>
-  );
+  const handleTimeout = () => {
+    setShowContent(true);
+  };
 
   return (
     <>
       <Layout>
-        {!showContent && <TypingAndErasing />}
+        {!showContent && (
+          <>
+            <TypingAndErasing />
+            <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+          </>
+        )}
         {showContent && (
           <>
             <Topics
@@ -104,7 +90,6 @@ const HomePage = () => {
               onHandleThree={() => dispatchMessage({ type: "three" })}
               onHandleFour={() => dispatchMessage({ type: "four" })}
               onHandleFive={() => dispatchMessage({ type: "five" })}
-              onHandleSix={() => dispatchMessage({ type: "six" })}
               onHandleSeven={() => dispatchMessage({ type: "seven" })}
               onHandleEight={() => dispatchMessage({ type: "eight" })}
               onHandleNine={() => dispatchMessage({ type: "nine" })}

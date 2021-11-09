@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { ThemeContext } from "../store/ThemeContext";
 
 const ContentContainer = styled.section`
-  height: 90vh;
   background: ${(props) => (props.darkMode ? "#222" : "#728a6d")};
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -14,8 +13,11 @@ const ContentContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   gap: 40px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
 `;
 
 const Layout = (props) => {
@@ -23,9 +25,11 @@ const Layout = (props) => {
   const darkMode = theme.state.darkMode;
   return (
     <>
-      <Header />
-      <ContentContainer darkMode={darkMode}>{props.children}</ContentContainer>
-      <Footer />
+      <ContentContainer darkMode={darkMode}>
+        <Header />
+        {props.children}
+        <Footer />
+      </ContentContainer>
     </>
   );
 };

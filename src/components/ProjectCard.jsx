@@ -97,7 +97,7 @@ const StyledButton = styled(Button)`
   }
 
   :hover {
-    background: black;
+    background: black !important;
   }
 
   &:hover a {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../store/ThemeContext";
-
+import ButtonColor from "../components/ButtonColor";
 import Layout from "../components/Layout";
 import Typing from "../components/Typing";
 import RitaTalking from "../components/RitaTalking";
@@ -10,6 +10,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PhoneIcon from "@mui/icons-material/Phone";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import Pdf from "../Documents/ritacv.pdf";
 
 const Container = styled.section`
   display: flex;
@@ -17,9 +19,10 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  width: 80%;
   @media (min-width: 600px) {
     gap: 30px;
     padding-left: 0px;
@@ -120,6 +123,13 @@ const StyledPhone = styled(PhoneIcon)`
   }
 `;
 
+const StyledFileDownloadIcon = styled(FileDownloadIcon)`
+  transform: scale(1);
+  @media (min-width: 600px) {
+    transform: scale(1.5);
+  }
+`;
+
 const StyledHr = styled.hr`
   width: 100%;
   margin-top: 0px;
@@ -141,10 +151,17 @@ const Contacts = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
+  const handleTimeout = () => {
+    setShowContent(true);
+  };
+
   return (
     <Layout>
       {!showContent ? (
-        <Typing wordOne="contacts" />
+        <>
+          <Typing wordOne="contacts" />
+          <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+        </>
       ) : (
         <Container>
           <RitaTalking
@@ -211,6 +228,17 @@ const Contacts = () => {
             >
               <div>
                 <StyledPhone />
+              </div>
+            </Link>
+            <Link
+              href={Pdf}
+              target="_blank"
+              rel="noreferrer"
+              darkMode={darkMode}
+              data-hover="CV"
+            >
+              <div>
+                <StyledFileDownloadIcon />
               </div>
             </Link>
             <StyledHr class="rounded" />

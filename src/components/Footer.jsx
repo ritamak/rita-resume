@@ -29,7 +29,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledBottomNav = styled(BottomNavigation)`
-  background: ${(props) => (props.darkMode ? "#222" : "#728a6d")};
+  background: ${(props) => (props.darkMode ? "#222" : "#728a6d")} !important;
 
   font-family: "Poppins", sans-serif !important;
   width: 100%;

@@ -51,14 +51,15 @@ const StyledBubble = styled(Grid)`
     margin-top: -16px;
   }
   @media (min-width: 600px) {
-    width: 50vw;
     padding: 20px;
     font-size: 2vw;
     line-height: 3vw;
   }
 `;
 
-const Container = styled.section``;
+const Container = styled.section`
+  width: 100%;
+`;
 
 export default function Bubble(props) {
   const { text } = props;
