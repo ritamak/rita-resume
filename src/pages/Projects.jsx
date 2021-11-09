@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../store/ThemeContext";
-
+import ButtonColor from "../components/ButtonColor";
 import Layout from "../components/Layout";
 import Typing from "../components/Typing";
 import ProjectCard from "../components/ProjectCard";
@@ -30,6 +30,7 @@ const BubbleWrapper = styled.section`
   flex-direction: column;
   gap: 30px;
   font-family: "Poppins", sans-serif;
+  width: 80%;
 `;
 
 const Btn = styled(Button)`
@@ -81,12 +82,21 @@ const Projects = () => {
     setOpenThird(!openThird);
   };
 
+  const handleTimeout = () => {
+    setShowContent(true);
+  };
+
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
 
   return (
     <Layout>
-      {!showContent && <Typing wordOne="projects" />}
+      {!showContent && (
+        <>
+          <Typing wordOne="projects" />{" "}
+          <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+        </>
+      )}
       {showContent && (
         <Container>
           <PhotoRita />

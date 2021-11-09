@@ -3,3 +3,8 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+body,
+html {
+  margin: 0px;
+}

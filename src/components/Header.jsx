@@ -9,19 +9,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)`
-  background: ${(props) => (props.darkMode ? "#222" : "#728a6d")};
+  background: ${(props) => (props.darkMode ? "#222" : "#728a6d")} !important;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  box-shadow: none !important;
+  width: 95% !important;
 `;
 
 const StyledTypography = styled(Typography)`
   color: white;
-  width: 20%;
-  background: green;
   display: flex;
   justify-content: flex-start;
+  box-shadow: none;
 `;
 
 const StyledLink = styled(Link)`
@@ -30,17 +29,13 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledToolbar = styled(Toolbar)`
-  background: pink;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 `;
 
 const StyledIconButton = styled(IconButton)`
-  width: 50%;
-  background: yellow;
   display: flex;
-  justify-content: flex-end;
 `;
 
 const Header = (props) => {
@@ -49,7 +44,7 @@ const Header = (props) => {
 
   return (
     <>
-      <StyledAppBar position="static" darkMode={darkMode}>
+      <StyledAppBar darkMode={darkMode}>
         <StyledToolbar>
           <StyledTypography
             darkMode={darkMode}

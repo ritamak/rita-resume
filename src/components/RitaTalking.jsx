@@ -6,18 +6,20 @@ import styled from "styled-components";
 const Container = styled.section`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @media (min-width: 600px) {
+    flex-direction: row;
     justify-content: center;
   }
 `;
 
 const Wrapper = styled.section`
   display: flex;
-  flex-direction: row;
-  gap: 0px;
+  flex-direction: column;
+  gap: 30px;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
