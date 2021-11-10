@@ -23,7 +23,7 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  width: 90%;
+  width: 80%;
   @media (min-width: 600px) {
     justify-content: center;
     flex-direction: row;

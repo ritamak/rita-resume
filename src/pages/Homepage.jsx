@@ -1,5 +1,5 @@
 import React, { useReducer, useState, useEffect } from "react";
-import ButtonColor from "../components/ButtonColor";
+import ButtonSkip from "../components/ButtonSkip";
 import RitaTalking from "../components/RitaTalking";
 import Topics from "../components/Topics";
 import Layout from "../components/Layout";
@@ -59,6 +59,14 @@ const HomePage = () => {
     initialMessageState
   );
   const [showContent, setShowContent] = useState(false);
+  const [question, updateQuestion] = useState([]);
+
+  const handleTopicChange = (question) => {
+    updateQuestion(question);
+    console.log(question.target.value);
+    console.log(question);
+    console.log(question.target.value.label);
+  };
 
   const contentHandler = () => {
     setShowContent(true);
@@ -79,7 +87,7 @@ const HomePage = () => {
         {!showContent && (
           <>
             <TypingAndErasing />
-            <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+            <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
           </>
         )}
         {showContent && (
@@ -93,8 +101,11 @@ const HomePage = () => {
               onHandleSeven={() => dispatchMessage({ type: "seven" })}
               onHandleEight={() => dispatchMessage({ type: "eight" })}
               onHandleNine={() => dispatchMessage({ type: "nine" })}
+              onHandleTopic={handleTopicChange}
+              question={question?.target?.value?.label || ""}
             />
-            <RitaTalking message={stateMessage.message} />
+            {!question && <RitaTalking message={stateMessage.message} />}
+            {question && <RitaTalking message={stateMessage.message} />}
           </>
         )}
       </Layout>

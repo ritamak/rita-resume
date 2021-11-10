@@ -8,37 +8,17 @@ import Typography from "@mui/material/Typography";
 import styled from "styled-components";
 
 const StyledCard = styled(Card)`
-  max-width: 200px;
+  width: 80%;
   padding: 20px;
-
-  @media (min-width: 380px) {
-    max-width: 310px;
-  }
-
-  @media (min-width: 580px) {
-    max-width: 450px;
-  }
-
-  @media (min-width: 680px) {
-    max-width: 550px;
-  }
-
-  @media (min-width: 680px) {
-    max-width: 630px;
-  }
-
-  @media (min-width: 780px) {
-    max-width: 700px;
-  }
-
-  @media (min-width: 1000px) {
-    max-width: 1100px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledHeader = styled(Typography)`
-  font-size: 4vw;
-  line-height: 5vw;
+  font-size: 3em !important;
+  line-height: 1em !important;
   color: black;
   text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc,
     1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc,
@@ -46,11 +26,12 @@ const StyledHeader = styled(Typography)`
     5px 6px 1px #eee, 7px 6px 1px #ccc;
   @media (min-width: 600px) {
     margin-bottom: 0px;
+    font-size: 2em !important;
   }
 `;
 
 const StyledBody = styled(Typography)`
-  font-size: 3vw;
+  font-size: 3vw !important;
   display: -webkit-box;
   -webkit-line-clamp: 19;
   -webkit-box-orient: vertical;
@@ -59,16 +40,16 @@ const StyledBody = styled(Typography)`
   text-align: justify;
 
   @media (min-width: 800px) {
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
     -webkit-line-clamp: 10;
     max-height: 550px;
   }
 `;
 
 const StyledDate = styled(Typography)`
-  font-size: 3vw;
+  font-size: 2vw !important;
   @media (min-width: 700px) {
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
   }
 `;
 
@@ -87,12 +68,12 @@ const StyledButton = styled(Button)`
   a {
     color: black;
     text-decoration: none;
-    font-size: 2vw;
+    font-size: 1em !important;
   }
 
   @media (min-width: 700px) {
     a {
-      font-size: 1vw;
+      font-size: 1em !important;
     }
   }
 

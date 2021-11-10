@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../store/ThemeContext";
-import ButtonColor from "../components/ButtonColor";
+import ButtonSkip from "../components/ButtonSkip";
 import Layout from "../components/Layout";
 import Typing from "../components/Typing";
 import RitaTalking from "../components/RitaTalking";
@@ -37,9 +37,9 @@ const ContactsWrapper = styled.section`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  row-gap: 30px;
   @media (max-width: 600px) {
-    gap: 1px;
+    row-gap: 30px;
   }
 `;
 
@@ -49,7 +49,7 @@ const Link = styled.a`
   padding: 0px;
   background: transparent;
   border: none;
-  font-size: 1vw;
+  font-size: 1vw !important;
   text-align: start;
   font-family: "Poppins", sans-serif;
   color: white;
@@ -65,12 +65,19 @@ const Link = styled.a`
     left: 0;
     width: 100%;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     font-weight: 800;
-    font-size: 0.8em;
+    font-size: 0.6vh;
     opacity: 0;
     transform: translate(-100%, 0);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media (min-width: 600px) {
+    :before {
+      font-weight: 800;
+      font-size: 2vh;
+    }
   }
   /*button div (button text before hover)*/
   :hover div {
@@ -160,7 +167,7 @@ const Contacts = () => {
       {!showContent ? (
         <>
           <Typing wordOne="contacts" />
-          <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+          <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
         </>
       ) : (
         <Container>
