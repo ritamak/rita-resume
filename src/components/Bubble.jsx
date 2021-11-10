@@ -42,7 +42,6 @@ const StyledBubble = styled(Grid)`
     border-width: 16px 16px 16px 0;
     border-color: ${(props) =>
       props.darkMode ? "transparent #222" : "transparent #7f7f7f"};
-
     display: block;
     width: 0;
     z-index: 0;
@@ -50,10 +49,11 @@ const StyledBubble = styled(Grid)`
     top: 50%;
     margin-top: -16px;
   }
+
   @media (min-width: 600px) {
     padding: 20px;
-    font-size: 2vw;
-    line-height: 3vw;
+    font-size: 0.7em;
+    line-height: 1.5em;
   }
 `;
 
@@ -69,12 +69,7 @@ export default function Bubble(props) {
 
   return (
     <Container>
-      <StyledBubble
-        darkMode={darkMode}
-        container
-        rowSpacing={1}
-        columnSpacing={{ xs: 0, sm: 0, md: 0, lg: 0 }}
-      >
+      <StyledBubble darkMode={darkMode} container rowSpacing={1}>
         {text && text}
         {!text && props.children}
       </StyledBubble>

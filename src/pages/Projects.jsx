@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../store/ThemeContext";
-import ButtonColor from "../components/ButtonColor";
+import ButtonSkip from "../components/ButtonSkip";
 import Layout from "../components/Layout";
 import Typing from "../components/Typing";
 import ProjectCard from "../components/ProjectCard";
 import Bubble from "../components/Bubble";
 import PhotoRita from "../components/PhotoRita";
-
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
 
@@ -18,10 +17,10 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  gap: 0px;
+  gap: 30px;
+  width: 70%;
   @media (min-width: 600px) {
     flex-direction: row;
-    gap: 30px;
   }
 `;
 
@@ -30,7 +29,7 @@ const BubbleWrapper = styled.section`
   flex-direction: column;
   gap: 30px;
   font-family: "Poppins", sans-serif;
-  width: 80%;
+  width: 100%;
 `;
 
 const Btn = styled(Button)`
@@ -39,7 +38,11 @@ const Btn = styled(Button)`
   text-decoration: none;
   cursor: pointer;
   text-align: end;
-  text-transform: lowercase;
+  text-transform: capitalize !important;
+  font-size: 1em;
+  @media (min-width: 600px) {
+    font-size: 3vw !important;
+  }
 `;
 
 const StyledBackdrop = styled(Backdrop)`
@@ -93,8 +96,8 @@ const Projects = () => {
     <Layout>
       {!showContent && (
         <>
-          <Typing wordOne="projects" />{" "}
-          <ButtonColor onHandle={handleTimeout}>Skip</ButtonColor>
+          <Typing wordOne="projects" />
+          <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
         </>
       )}
       {showContent && (

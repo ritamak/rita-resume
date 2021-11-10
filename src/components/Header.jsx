@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import { ThemeContext } from "../store/ThemeContext";
-import ButtonIcon from "../components/Button";
+import ButtonIcon from "../components/ButtonToggle";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 

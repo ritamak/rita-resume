@@ -12,7 +12,12 @@ export default function Typing({ wordOne }) {
 
   const Presentation = styled.h1`
     font-family: "Poppins", sans-serif;
-    color: ${(props) => (props.darkMode ? "white" : "black")};
+    color: white !important;
+    font-size: 4em;
+    margin-bottom: 0px;
+    @media (min-width: 600px) {
+      font-size: 3em;
+    }
   `;
 
   useEffect(() => {
