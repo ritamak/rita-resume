@@ -71,9 +71,9 @@ const Topics = ({
   const questions = [
     { label: "Who are you?", onHandle: onHandleOne },
     { label: "Why web development?", onHandle: onHandleTwo },
-    { label: "Do you have a Bachelor degree?", onHandle: onHandleThree },
-    { label: "Tell me some personal things about you", onHandle: onHandleFour },
-    { label: "So, what do you know?", onHandle: onHandleFive },
+    { label: "Your knowledge", onHandle: onHandleThree },
+    { label: " personal side", onHandle: onHandleFour },
+    { label: "your stack", onHandle: onHandleFive },
     { label: "Top soft skills?", onHandle: onHandleSeven },
     { label: "Super-powers?", onHandle: onHandleEight },
     { label: "What do you look in a company?", onHandle: onHandleNine },
