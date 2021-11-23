@@ -218,7 +218,7 @@ const Projects = () => {
             >
               <ProjectCard
                 projectTitle={"Rita's Resume"}
-                projectDescription={`Developed using React, this is a website where you can find out more about me personally and my professional path. The website has light and dark mode, a page with all of my projects, other with all of my contacts and one with the Q&A. There is also a not found page.`}
+                projectDescription={`Developed using React, this is a website where you can find out more about me personally and my professional path. The website has light and dark mode, a page with all of my projects, other with all of my contacts and one with the Q&A. There is also a not found page!`}
                 projectTime={"2021-11-08"}
                 link1={"https://rita-mak.netlify.app"}
                 link1title={"website"}
