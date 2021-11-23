@@ -27,9 +27,12 @@ const Container = styled.section`
 const BubbleWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   font-family: "Poppins", sans-serif;
   width: 100%;
+  @media (min-width: 600px) {
+    gap: 30px;
+  }
 `;
 
 const Btn = styled(Button)`
