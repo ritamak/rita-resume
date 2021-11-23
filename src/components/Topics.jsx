@@ -76,7 +76,7 @@ const Topics = ({
     { label: "your stack", onHandle: onHandleFive },
     { label: "Top soft skills?", onHandle: onHandleSeven },
     { label: "Super-powers?", onHandle: onHandleEight },
-    { label: "What do you look in a company?", onHandle: onHandleNine },
+    { label: "company goals?", onHandle: onHandleNine },
   ];
 
   return (
