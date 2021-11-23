@@ -8,7 +8,7 @@ import Bubble from "../components/Bubble";
 import PhotoRita from "../components/PhotoRita";
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
-
+import ComingSoon from "../components/ComingSoon";
 import styled from "styled-components";
 
 const Container = styled.section`
@@ -66,11 +66,15 @@ const Projects = () => {
   const [openFirst, setOpenFirst] = useState(false);
   const [openSecond, setOpenSecond] = useState(false);
   const [openThird, setOpenThird] = useState(false);
+  const [openFourth, setOpenFourth] = useState(false);
+  const [openFifth, setOpenFifth] = useState(false);
 
   const handleClose = () => {
     setOpenFirst(false);
     setOpenSecond(false);
     setOpenThird(false);
+    setOpenFourth(false);
+    setOpenFifth(false);
   };
 
   const handleToggleOne = () => {
@@ -85,6 +89,14 @@ const Projects = () => {
     setOpenThird(!openThird);
   };
 
+  const handleToggleFour = () => {
+    setOpenFourth(!openFourth);
+  };
+
+  const handleToggleFive = () => {
+    setOpenFifth(!openFifth);
+  };
+
   const handleTimeout = () => {
     setShowContent(true);
   };
@@ -97,7 +109,7 @@ const Projects = () => {
       {!showContent && (
         <>
           <Typing wordOne="projects" />
-          <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
+          <ButtonSkip onHandleSkip={handleTimeout} title="skip" />
         </>
       )}
       {showContent && (
@@ -192,6 +204,40 @@ const Projects = () => {
                 link3={"https://github.com/ritamak/hrtimes-server"}
                 link3title={"server"}
               />
+            </Backdrop>
+            <Btn darkMode={darkMode} onClick={handleToggleFour}>
+              <Bubble>This website (my resume)</Bubble>
+            </Btn>
+            <Backdrop
+              sx={{
+                color: "#fff",
+                zIndex: (theme) => theme.zIndex.drawer + 1,
+              }}
+              open={openFourth}
+              onClick={handleClose}
+            >
+              <ProjectCard
+                projectTitle={"Rita's Resume"}
+                projectDescription={`Developed using React, this is a website where you can find out more about me personally and my professional path. The website has light and dark mode, a page with all of my projects, other with all of my contacts and one with the Q&A. There is also a not found page!`}
+                projectTime={"2021-11-08"}
+                link1={"https://rita-mak.netlify.app"}
+                link1title={"website"}
+                link2={"https://github.com/ritamak/rita-resume"}
+                link2title={"repo"}
+              />
+            </Backdrop>
+            <Btn darkMode={darkMode} onClick={handleToggleFive}>
+              <Bubble>secret project</Bubble>
+            </Btn>
+            <Backdrop
+              sx={{
+                color: "#fff",
+                zIndex: (theme) => theme.zIndex.drawer + 1,
+              }}
+              open={openFifth}
+              onClick={handleClose}
+            >
+              <ProjectCard projectDescription={<ComingSoon />} />
             </Backdrop>
           </BubbleWrapper>
         </Container>

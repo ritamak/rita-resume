@@ -87,7 +87,7 @@ const HomePage = () => {
         {!showContent && (
           <>
             <TypingAndErasing />
-            <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
+            <ButtonSkip onHandleSkip={handleTimeout} title="skip" />
           </>
         )}
         {showContent && (

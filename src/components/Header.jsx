@@ -36,6 +36,7 @@ const StyledToolbar = styled(Toolbar)`
 
 const StyledIconButton = styled(IconButton)`
   display: flex;
+  transform: scale(1.3);
 `;
 
 const Header = (props) => {
@@ -48,7 +49,7 @@ const Header = (props) => {
         <StyledToolbar>
           <StyledTypography
             darkMode={darkMode}
-            variant="h6"
+            variant="h5"
             component="div"
             sx={{ flexGrow: 1 }}
           >

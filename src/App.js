@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import Projects from "./pages/Projects";
 import LearnMore from "./pages/LearnMore";
 import Contacts from "./pages/Contacts";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route exact path="/projects" element={<Projects />} />
         <Route exact path="/contacts" element={<Contacts />} />
         <Route exact path="/learn-more" element={<LearnMore />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

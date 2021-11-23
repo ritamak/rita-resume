@@ -22,13 +22,15 @@ const Timer = (props) => {
   let seconds = timeBetween.seconds().toString().substring(1);
   return (
     <>
-      <p className="counter">
-        <span>{months}m </span>
-        <span>{days}d </span>
-        <span>{hours}h </span>
-        <span>{minutes}min </span>
-        <span>{seconds}s ago</span>
-      </p>
+      {date && (
+        <p className="counter">
+          {months && <span>{months}m </span>}
+          {days && <span>{days}d </span>}
+          <span>{hours}h </span>
+          <span>{minutes}min </span>
+          <span>{seconds}s ago</span>
+        </p>
+      )}
     </>
   );
 };

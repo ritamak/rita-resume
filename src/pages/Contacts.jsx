@@ -167,7 +167,7 @@ const Contacts = () => {
       {!showContent ? (
         <>
           <Typing wordOne="contacts" />
-          <ButtonSkip onHandleSkip={handleTimeout}>Skip</ButtonSkip>
+          <ButtonSkip onHandleSkip={handleTimeout} title="skip" />
         </>
       ) : (
         <Container>
