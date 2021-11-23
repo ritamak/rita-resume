@@ -4,7 +4,7 @@ import styled from "styled-components";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
-import BuildIcon from "@mui/icons-material/Build";
+import ListIcon from "@mui/icons-material/List";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -50,15 +50,17 @@ const StyledBottomActions = styled(BottomNavigationAction)`
 const StyledRestoreIcon = styled(RestoreIcon)`
   color: white;
   font-family: "Poppins", sans-serif !important;
+  transform: scale(1.5);
 
   .Mui-selected {
     color: white;
   }
 `;
 
-const StyledBuildIcon = styled(BuildIcon)`
+const StyledListIcon = styled(ListIcon)`
   color: white;
   font-family: "Poppins", sans-serif !important;
+  transform: scale(1.5);
 
   .Mui-selected {
     color: white;
@@ -113,7 +115,7 @@ const Footer = () => {
           selected
           icon={
             <StyledLink to="/projects">
-              <StyledBuildIcon />
+              <StyledListIcon />
             </StyledLink>
           }
         />

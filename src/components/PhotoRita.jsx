@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import photoRita from "../image/rita.jpg";
 
 const StyledImage = styled.img`
   border-radius: 50%;
@@ -26,10 +27,7 @@ const StyledImage = styled.img`
 const PhotoRita = () => {
   return (
     <>
-      <StyledImage
-        src="https://media-exp1.licdn.com/dms/image/C4E03AQGcvQsKNIKuUw/profile-displayphoto-shrink_800_800/0/1624188853558?e=1637193600&v=beta&t=bIugkxGZsYCHbPF919i_4PPtjD_bmt36-BXzDfbOMAg"
-        alt="Rita Mak"
-      ></StyledImage>
+      <StyledImage src={photoRita} alt="Rita Mak"></StyledImage>
     </>
   );
 };
