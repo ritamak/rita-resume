@@ -3,7 +3,6 @@ import Timer from "../components/Timer";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
 
@@ -61,27 +60,20 @@ const StyledCardActions = styled(CardActions)`
   padding: 0px;
 `;
 
-const StyledButton = styled(Button)`
+const StyledLink = styled.a`
   border: 1px solid black;
   width: 30%;
   height: 100%;
-  a {
-    color: black;
-    text-decoration: none;
-    font-size: 1em !important;
-  }
+  color: black;
+  text-decoration: none;
+  font-size: 2em !important;
 
   @media (min-width: 700px) {
-    a {
-      font-size: 1em !important;
-    }
+    font-size: 0.8em !important;
   }
 
   :hover {
     background: black !important;
-  }
-
-  &:hover a {
     color: white;
   }
 `;
@@ -110,25 +102,21 @@ export default function Cards(props) {
         </StyledDate>
         <StyledBody color="text.secondary">{projectDescription}</StyledBody>
       </CardContent>
-      <StyledCardActions>
-        <StyledButton size="large">
-          <a href={link1} target="_blank" rel="noreferrer noopener">
+      {link1 && (
+        <StyledCardActions>
+          <StyledLink href={link1} target="_blank" rel="noreferrer noopener">
             {link1title}
-          </a>
-        </StyledButton>
-        <StyledButton size="large">
-          <a href={link2} target="_blank" rel="noreferrer noopener">
+          </StyledLink>
+          <StyledLink href={link2} target="_blank" rel="noreferrer noopener">
             {link2title}
-          </a>
-        </StyledButton>
-        {link3 && (
-          <StyledButton size="large">
-            <a href={link3} target="_blank" rel="noreferrer noopener">
+          </StyledLink>
+          {link3 && (
+            <StyledLink href={link3} target="_blank" rel="noreferrer noopener">
               {link3title}
-            </a>
-          </StyledButton>
-        )}
-      </StyledCardActions>
+            </StyledLink>
+          )}
+        </StyledCardActions>
+      )}
     </StyledCard>
   );
 }
