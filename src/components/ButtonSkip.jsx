@@ -16,12 +16,12 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const ButtonSkip = ({ onHandleSkip }) => {
+const ButtonSkip = ({ onHandleSkip, title }) => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
   return (
     <StyledButton darkMode={darkMode} onClick={onHandleSkip}>
-      Skip
+      {title}
     </StyledButton>
   );
 };
