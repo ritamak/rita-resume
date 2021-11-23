@@ -102,19 +102,21 @@ export default function Cards(props) {
         </StyledDate>
         <StyledBody color="text.secondary">{projectDescription}</StyledBody>
       </CardContent>
-      <StyledCardActions>
-        <StyledLink href={link1} target="_blank" rel="noreferrer noopener">
-          {link1title}
-        </StyledLink>
-        <StyledLink href={link2} target="_blank" rel="noreferrer noopener">
-          {link2title}
-        </StyledLink>
-        {link3 && (
-          <StyledLink href={link3} target="_blank" rel="noreferrer noopener">
-            {link3title}
+      {link1 && (
+        <StyledCardActions>
+          <StyledLink href={link1} target="_blank" rel="noreferrer noopener">
+            {link1title}
           </StyledLink>
-        )}
-      </StyledCardActions>
+          <StyledLink href={link2} target="_blank" rel="noreferrer noopener">
+            {link2title}
+          </StyledLink>
+          {link3 && (
+            <StyledLink href={link3} target="_blank" rel="noreferrer noopener">
+              {link3title}
+            </StyledLink>
+          )}
+        </StyledCardActions>
+      )}
     </StyledCard>
   );
 }

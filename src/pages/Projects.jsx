@@ -240,7 +240,10 @@ const Projects = () => {
               open={openFifth}
               onClick={handleClose}
             >
-              <ProjectCard projectDescription={<ComingSoon />} />
+              <ProjectCard
+                projectTitle={"Secret Project"}
+                projectDescription={<ComingSoon />}
+              />
             </Backdrop>
           </BubbleWrapper>
         </Container>
