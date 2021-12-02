@@ -33,18 +33,3 @@ const useMessage = () => {
 };
 
 export default useMessage;
-
-/*
-
-const MessageHandler = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <>
-      Message: {state.message}
-      <button onClick={() => dispatch({ type: "decrement" })}>one</button>
-      <button onClick={() => dispatch({ type: "increment" })}>two</button>
-    </>
-  );
-};
-
-*/

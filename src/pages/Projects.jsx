@@ -8,7 +8,6 @@ import Bubble from "../components/Bubble";
 import PhotoRita from "../components/PhotoRita";
 import Backdrop from "@mui/material/Backdrop";
 import Button from "@mui/material/Button";
-import ComingSoon from "../components/ComingSoon";
 import styled from "styled-components";
 
 const Container = styled.section`
@@ -229,8 +228,9 @@ const Projects = () => {
                 link2title={"repo"}
               />
             </Backdrop>
+
             <Btn darkMode={darkMode} onClick={handleToggleFive}>
-              <Bubble>secret project</Bubble>
+              <Bubble>codding challenge </Bubble>
             </Btn>
             <Backdrop
               sx={{
@@ -241,8 +241,13 @@ const Projects = () => {
               onClick={handleClose}
             >
               <ProjectCard
-                projectTitle={"Secret Project"}
-                projectDescription={<ComingSoon />}
+                projectTitle={"Codding Challenge "}
+                projectDescription={`Codding challenge I did for an interview. It was asked to create a timeline where you can add, edit and remove new posts. You can also tag usernames using @ and # or hover over posts with tagged people to see their info. There is also an Admin page where you can add, remove or edit employees. If you edit and employee who is tagged in a certain post, the employee info gets updated.`}
+                projectTime={"2021-12-01"}
+                link1={"https://challenge-one.netlify.app"}
+                link1title={"website"}
+                link2={"https://github.com/ritamak/challenge-one"}
+                link2title={"repo"}
               />
             </Backdrop>
           </BubbleWrapper>
