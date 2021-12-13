@@ -1,3 +1,5 @@
+# Rita Mak's resume
+
 Rita's online resume to send to companies when applying to job vacancies. It was used React to develop the project and it is deployed [here](https://rita-mak.netlify.app).
 
 It consists in:
@@ -24,4 +26,3 @@ open the terminal and use the command `npm run start` to run the project on a lo
 
 ## Extra
 There's both dark and light mode.
-
