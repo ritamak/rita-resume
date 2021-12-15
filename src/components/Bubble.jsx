@@ -52,7 +52,7 @@ const StyledBubble = styled(Grid)`
 
   @media (min-width: 600px) {
     padding: 20px;
-    font-size: 0.7em;
+    font-size: 0.4em;
     line-height: 1.5em;
   }
 `;
