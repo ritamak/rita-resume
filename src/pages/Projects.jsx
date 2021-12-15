@@ -30,7 +30,7 @@ const BubbleWrapper = styled.section`
   font-family: "Poppins", sans-serif;
   width: 100%;
   @media (min-width: 600px) {
-    gap: 30px;
+    gap: 10px;
   }
 `;
 
@@ -70,6 +70,7 @@ const Projects = () => {
   const [openThird, setOpenThird] = useState(false);
   const [openFourth, setOpenFourth] = useState(false);
   const [openFifth, setOpenFifth] = useState(false);
+  const [openSixth, setOpenSixth] = useState(false);
 
   const handleClose = () => {
     setOpenFirst(false);
@@ -77,6 +78,7 @@ const Projects = () => {
     setOpenThird(false);
     setOpenFourth(false);
     setOpenFifth(false);
+    setOpenSixth(false);
   };
 
   const handleToggleOne = () => {
@@ -97,6 +99,10 @@ const Projects = () => {
 
   const handleToggleFive = () => {
     setOpenFifth(!openFifth);
+  };
+
+  const handleToggleSix = () => {
+    setOpenSixth(!openSixth);
   };
 
   const handleTimeout = () => {
@@ -230,7 +236,7 @@ const Projects = () => {
             </Backdrop>
 
             <Btn darkMode={darkMode} onClick={handleToggleFive}>
-              <Bubble>codding challenge </Bubble>
+              <Bubble>codding challenge one </Bubble>
             </Btn>
             <Backdrop
               sx={{
@@ -247,6 +253,31 @@ const Projects = () => {
                 link1={"https://challenge-one.netlify.app"}
                 link1title={"website"}
                 link2={"https://github.com/ritamak/challenge-one"}
+                link2title={"repo"}
+              />
+            </Backdrop>
+
+            <Btn darkMode={darkMode} onClick={handleToggleSix}>
+              <Bubble>codding challenge two </Bubble>
+            </Btn>
+            <Backdrop
+              sx={{
+                color: "#fff",
+                zIndex: (theme) => theme.zIndex.drawer + 1,
+              }}
+              open={openSixth}
+              onClick={handleClose}
+            >
+              <ProjectCard
+                projectTitle={"Codding Challenge "}
+                projectDescription={`A code challenge for Company X using Next.js, GraphQL, Apollo Client and React. For styling it was used Chakra UI and CSS modules. 
+                You will have an input field where you can type any word of choice and you'll get an answer using the Micro Answer REST API (https://m3o.com/answer/).
+                You can switch between English and German.
+                You can also search for an answer by typing the word in the URL https://localhost:[YOUR_PORT]/[YOUR_WORD_OR_STRING]`}
+                projectTime={"2021-12-12"}
+                link1={"https://ritamak-challenge.vercel.app"}
+                link1title={"website"}
+                link2={"https://github.com/ritamak/challenge-two"}
                 link2title={"repo"}
               />
             </Backdrop>
