@@ -11,7 +11,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import PhoneIcon from "@mui/icons-material/Phone";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import Pdf from "../Documents/ritacv.pdf";
+import Pdf from "../Documents/RitaMak_CV.pdf";
 
 const Container = styled.section`
   display: flex;
